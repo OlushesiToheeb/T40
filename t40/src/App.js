@@ -1,5 +1,7 @@
 import React from 'react';
 import Layout from './components/Layout/Layout'
+import BookRide from './containers/bookRide'
+import { Route , Switch} from "react-router-dom";
 
 
 class APP extends React.Component {
@@ -7,7 +9,9 @@ class APP extends React.Component {
     return (
       <React.Fragment>
         <Layout>
-          Toolbar, sidedrawer, main
+        <Switch>
+            <Route exact path='/' component={BookRide} />  
+          </Switch>
         </Layout>
       </React.Fragment>
     );
