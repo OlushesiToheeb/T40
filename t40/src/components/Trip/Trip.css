@@ -1,5 +1,172 @@
 .Hero{
     background-size: cover;
-    min-height: 60vh;
+    min-height: 55vh;
     padding: 1.5rem 1rem;
 }
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.banner-Header {
+    display: block;
+    max-width: 55%;
+    margin-top: 5rem;
+}
+
+.banner-Header strong{
+    font-weight: 600;
+}
+
+.banner-Header span{
+    font-size: 1.3rem;
+}
+
+.form-wrapper{
+    margin-top: 1rem;
+    background: rgb(238, 238, 238);
+    padding: 0.2rem 0px;
+    border-radius: 4px;
+}
+
+.button-wrapper {
+    margin-top: 1.22rem;
+}
+
+.button {
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+}
+
+.task-listing-container{
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.12);
+    margin-top: 35px;
+
+}
+
+.task-listing{
+    background-color: #fff;
+    transition: .3s;
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    margin-bottom: 0;
+    box-shadow: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+}
+
+.task-listing:hover{
+    border-left: 4px solid #fc5426;
+}
+
+.task-listing-details{
+    display: flex;
+    flex: 1;
+    padding-right: 0;
+    padding: 27px 35px;
+}
+
+.task-listing-description{
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-tag{
+    display: block;
+    margin: 23px 0 3px;
+}
+
+.task-tag span{
+    transition: .3s;
+    font-size: 14.7px;
+    border-radius: 4px;
+    background-color: rgba(42,65,232,.07);
+    color: #fc5426;
+    display: inline-block;
+    padding: 6px 15px;
+    margin: 2px 0;
+    line-height: 24px;
+}
+
+
+h3.task-listing-title {
+    font-size: 18px;
+    color: #333;
+    line-height: 28px;
+    cursor: pointer;
+    font-weight: 600;
+    padding-top: 2px;
+    transition: .3s;
+}
+
+ .task-icon{
+    list-style: none;
+    padding: 0;
+    margin: 3px 0 0 -3px;
+    padding-left: .25rem!important;
+}
+
+ .task-icon li {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    margin-right: 10px;
+    color: gray;
+}
+
+.task-listing-bid{
+    flex: 0 0 240px;
+    background-color: transparent;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-listing-bid-inner{
+    padding: 27px 35px;
+    width: 100%;
+}
+
+.task-listing-bid .task-offer {
+    margin-bottom: 15px;
+}
+
+.task-offer strong {
+    display: block;
+    color: #333;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+span.button{
+    background-color: #fc5426;
+    top: 0;
+    padding: 10px 20px;
+    line-height: 24px;
+    color: #fff;
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    text-align: center;
+    width: 100%;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(42,65,232,.15);
+}
+
