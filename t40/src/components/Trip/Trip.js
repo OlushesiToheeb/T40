@@ -1,10 +1,19 @@
 import React from 'react';
 import './Trip.css';
 import bg from '../../assets/imgs/hero.jpg';
-// import DateTime from '../UI/DateTimePicker';
+import DatePicker from '../UI/DatePicker/DatePicker'
+
 
 class Trip extends React.Component{
    
+    state={
+        searchResult:null
+    }
+
+    searchResultHandler = () =>{
+
+
+    }
 
 
     render(){
@@ -98,7 +107,7 @@ class Trip extends React.Component{
 
                                     <div className='mt-lg-3 mr-lg-4 mt-2 col-lg-2'>
                                         <p className = 'mb-0'> Date</p>
-                                        {/* <DateTime />  */}
+                                        <DatePicker/> 
                                     </div>
 
                                     <div className='mt-lg-3 mt-2 col-lg-2'>
@@ -140,8 +149,8 @@ class Trip extends React.Component{
                                         <div className='button-wrapper'>
                                             <div className='button'>
                                                 <button 
-                                                    className='btn' 
-                                                    type='button'
+                                                    className='btn ' 
+                                                    type='submit'
                                                     style={{
                                                         background:'rgb(252, 84, 38)', 
                                                         border: 'rgb(252, 84, 38)', 
