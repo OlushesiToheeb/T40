@@ -33,6 +33,7 @@
     border-radius: 4px;
 }
 
+
 .button-wrapper {
     margin-top: 1.22rem;
 }
@@ -41,6 +42,11 @@
     display: flex;
     -webkit-box-pack: end;
     justify-content: flex-end;
+}
+
+.btn:focus {
+    outline: 0;
+    box-shadow: none;
 }
 
 .task-listing-container{

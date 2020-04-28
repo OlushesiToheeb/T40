@@ -5,7 +5,7 @@ import Toolbar from '../Navigation/Toolbar/Toolbar'
 class Layout extends React.Component{
     render(){
         return(
-            <React.Fragment className="Layout">
+            <React.Fragment>
                 <Toolbar />
                 <main>{this.props.children}</main>
             </React.Fragment>

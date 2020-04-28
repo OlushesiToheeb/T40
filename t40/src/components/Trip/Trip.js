@@ -1,7 +1,10 @@
 import React from 'react';
 import './Trip.css';
 import bg from '../../assets/imgs/hero.jpg';
-import DatePicker from '../UI/DatePicker/DatePicker'
+
+import axios from 'axios';
+import Form from '../Form/Form';
+
 
 
 class Trip extends React.Component{
@@ -11,8 +14,13 @@ class Trip extends React.Component{
     }
 
     searchResultHandler = () =>{
-
-
+        axios.get('https://react-t40-ced15.firebaseio.com/bookRide.json')
+            .then(res=>{
+                console.log(res,res.data)
+            })
+            .catch(err => {
+                console.log(err.message)
+            })
     }
 
 
@@ -35,137 +43,7 @@ class Trip extends React.Component{
 
                         <div className='form-wrapper'>
                             <div className="container">
-                                <div className='row'>
-                                    <div className='mt-lg-3 mr-lg-4 mt-2 col-lg-2'>
-                                        <p className = 'mb-0'> Departure</p>
-                                        <div className='form-group'>
-                                            <select 
-                                                name='select' 
-                                                className='form-control' 
-                                                style={{
-                                                    boxShadow: 'rgba(0, 0, 0, 0.2) 0px 0px 3px 0px', 
-                                                    paddingTop: '0px', 
-                                                    margin:' 0px 10px 0px 0px', 
-                                                    height: '48px', 
-                                                    border: '0px', 
-                                                    outline: 'none', 
-                                                    display: 'flex', 
-                                                    alignItems: 'center', 
-                                                    justifyContent: 'center', 
-                                                    minWidth: '175px;'
-                                                }}>
-                                                
-                                                <option>Select...</option>
-                                                <option value ='NGABV'>Abuja</option>
-                                                <option value ='NGAEK'>Ado</option>
-                                                <option value ='NGAJA'>Ajase</option>
-                                                <option value ='NGAKR'>Akure</option>
-                                                <option value ='NGBNI'>Benin</option>
-                                                <option value ='NGCBQ'>Calabar</option>
-                                                <option value ='NGDKA'>Kastina</option>
-                                                <option value ='NGILR'>Ilorin</option>
-                                                <option value ='NGIOD'>Ijebu-Ode</option>
-                                                <option value ='NGKAN'>Kano</option> 
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className='mt-lg-3 mr-lg-4 mt-2 col-lg-2'>
-
-                                        <p className = 'mb-0'> Destination</p>
-                                        <div className='form-group'>
-                                            <select 
-                                                name='select' 
-                                                className='form-control' 
-                                                style={{
-                                                    boxShadow: 'rgba(0, 0, 0, 0.2) 0px 0px 3px 0px', 
-                                                    paddingTop: '0px', 
-                                                    margin:' 0px 10px 0px 0px', 
-                                                    height: '48px', 
-                                                    border: '0px', 
-                                                    outline: 'none', 
-                                                    display: 'flex', 
-                                                    alignItems: 'center', 
-                                                    justifyContent: 'center', 
-                                                    minWidth: '175px;'
-                                                }}>
-                                                
-                                                <option>Select...</option>
-                                                <option value ='NGABV'>Abuja</option>
-                                                <option value ='NGAEK'>Ado</option>
-                                                <option value ='NGAJA'>Ajase</option>
-                                                <option value ='NGAKR'>Akure</option>
-                                                <option value ='NGBNI'>Benin</option>
-                                                <option value ='NGCBQ'>Calabar</option>
-                                                <option value ='NGDKA'>Kastina</option>
-                                                <option value ='NGILR'>Ilorin</option>
-                                                <option value ='NGIOD'>Ijebu-Ode</option>
-                                                <option value ='NGKAN'>Kano</option> 
-                                            </select>
-                                        </div>
-                                        
-                                    </div>
-
-                                    <div className='mt-lg-3 mr-lg-4 mt-2 col-lg-2'>
-                                        <p className = 'mb-0'> Date</p>
-                                        <DatePicker/> 
-                                    </div>
-
-                                    <div className='mt-lg-3 mt-2 col-lg-2'>
-
-                                        <p className = 'mb-0'> Passengers</p>
-                                        <div className='form-group'>
-                                            <select 
-                                                name='select' 
-                                                className='form-control' 
-                                                style={{
-                                                    boxShadow: 'rgba(0, 0, 0, 0.2) 0px 0px 3px 0px', 
-                                                    paddingTop: '0px', 
-                                                    margin:' 0px 10px 0px 0px', 
-                                                    height: '48px', 
-                                                    border: '0px', 
-                                                    outline: 'none', 
-                                                    display: 'flex', 
-                                                    alignItems: 'center', 
-                                                    justifyContent: 'center', 
-                                                    minWidth: '175px;'
-                                                }}>
-                                                
-                                                <option>Select...</option>
-                                                <option value ='1'>1</option>
-                                                <option value ='2'>2</option>
-                                                <option value ='3'>3</option>
-                                                <option value ='4'>4</option>
-                                                <option value ='5'></option>
-                                                <option value ='6'>6</option>
-                                                <option value ='7'>7</option>
-                                                <option value ='8'>8</option>
-                                                <option value ='9'>9</option>
-                                            </select>
-                                        </div>
-                                        
-                                    </div>
-
-                                    <div className='mt-4 mb-md-2 col-lg-3'>
-                                        <div className='button-wrapper'>
-                                            <div className='button'>
-                                                <button 
-                                                    className='btn ' 
-                                                    type='submit'
-                                                    style={{
-                                                        background:'rgb(252, 84, 38)', 
-                                                        border: 'rgb(252, 84, 38)', 
-                                                        color: 'rgb(255, 255, 255)', 
-                                                        padding: '0.7rem 1.5rem',
-                                                        fontSize: '1.1rem', 
-                                                        width: '150px', 
-                                                        height: '48px;'
-                                                    }}>
-                                                        Search
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <Form/>
                             </div>
                         </div>
 

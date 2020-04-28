@@ -23,11 +23,13 @@ class DatePick extends React.Component {
       return (
         <DatePicker
         selected={this.state.startDate}
-        onChange={this.handleChange}
+        onChange={this.props.changed}
+        value={this.props.value}
         placeholderText="Departure Date"
         className='box form-control'
         minDate={new Date()}
         showDisabledMonthNavigation
+        name={this.props.name}
         />
       );
     }
