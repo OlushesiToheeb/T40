@@ -1,32 +1,45 @@
 import React from 'react';
-import DatePicker from '../UI/DatePicker/DatePicker'
+
+import DatePicker from "react-datepicker";
+ 
+import "react-datepicker/dist/react-datepicker.css";
+
+import './Form.css';
 
 class Form extends React.Component{
     
     state = {
         cityFro : '',
         cityTo : '',
-        dayPicked: '',
-        passengers:''
+        passengers:'',
+        startDate: null
     }
 
     handleChange = (event) =>{
+        
         const { name , value } = event.target
 
         this.setState({[name]: value});
     }
 
-    handleSubmit(event) {
+    handleDateChanged = date => {
+        this.setState({
+          startDate: date
+        });
+    };
+    
+
+    handleSubmit=(event) =>{
         event.preventDefault();
-        const { cityFro, cityTo, dayPicked, passengers } = this.state;
-        alert('you selected: ' + cityFro, cityTo, dayPicked, passengers);
-      }
+        const { cityFro, cityTo, startDate, passengers } = this.state;
+        alert(`you selected: ${cityFro} ${cityTo} ${startDate} ${passengers}`);
+    }
 
     render(){
-        const {cityFro, cityTo, dayPicked, passengers} = this.state
+        const {cityFro, cityTo, startDate, passengers} = this.state
 
         return(
-            <form className='row'>
+            <form className='row' onSubmit={this.handleSubmit}>
                 <div className='mt-lg-3 mr-lg-4 mt-2 col-lg-2'>
                     <p className = 'mb-0'> Departure</p>
                     <div className='form-group'>
@@ -104,10 +117,16 @@ class Form extends React.Component{
 
                 <div className='mt-lg-3 mr-lg-4 mt-2 col-lg-2'>
                     <p className = 'mb-0'> Date</p>
-                    <DatePicker 
-                    changed={this.handleChange} 
-                    value={dayPicked}
-                    name ="dayPicked"/> 
+                    <DatePicker
+                        selected={this.state.startDate}
+                        onChange={this.handleDateChanged}
+                        placeholderText="Departure Date"
+                        className='box form-control'
+                        minDate={new Date()}
+                        showDisabledMonthNavigation
+                        value={startDate}
+                        name= 'startDate'
+                    />
                 </div>
 
                 <div className='mt-lg-3 mt-2 col-lg-2'>
@@ -164,7 +183,7 @@ class Form extends React.Component{
                                     height: '48px',
                                 }}
                                 // onClick={this.searchResultHandler}
-                                onSubmit={this.handleSubmit}
+                                
                                 >
                                     Search
                             </button>
