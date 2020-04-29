@@ -10,24 +10,79 @@ import Form from '../Form/Form';
 class Trip extends React.Component{
    
     state={
-        searchResult:null
+        searchResult:null,
+        loading:true
     }
 
     searchResultHandler = () =>{
         axios.get('https://react-t40-ced15.firebaseio.com/bookRide.json')
             .then(res=>{
                 console.log(res,res.data)
+                this.setState({searchResult : res.data, loading:false})
+                console.log(this.state.searchResult)
+
             })
             .catch(err => {
                 console.log(err.message)
             })
-    }
+		}
+		
+		 UI = () =>{
+
+				return Object.keys(this.state.searchResult).map( result => {
+					console.log(this.state.searchResult[result])
+					return(
+							<div className='task-listing-container'>
+								<div className='task-listing'>
+										<div className='task-listing-details'>
+												<div className='task-listing-description'>
+														<div className='task-tag' style={{marginTop: '15px'}}>
+																<span> From </span>
+														</div>
+														<h3 className='task-listing-title'>Abuja-JabiPark (T40)</h3>
+														<ul className='task-icon'>
+																<li>{this.state.searchResult[result].fro.time}</li>
+																<li>Monday, April 27th 2020</li>
+														</ul>
+												</div>
+
+												<div className='task-listing-description'>
+														<div className='task-tag' style={{marginTop: '15px'}}>
+																<span> To </span>
+														</div>
+														<h3 className='task-listing-title'>Akure (T40)</h3>
+														<ul className='task-icon'>
+																<li>{this.state.searchResult[result].to.time}</li>
+																<li></li>
+														</ul>
+												</div>
+										</div>
+										<div className='task-listing-bid'>
+												<div className='task-listing-bid-inner'>
+														<div className='task-offer'>
+																<strong>₦{this.state.searchResult[result].price} per passenger</strong>
+														</div>
+														<span className='button'>Book Now</span>
+												</div>
+										</div>
+								</div>
+
+						</div>
+					)
+					
+
+			})
+		}
+
+   
 
 
-    render(){
-        
+    render(){    
+
         return(
+						
             <React.Fragment>
+							
                 <div className="Hero" style={{backgroundImage: " linear-gradient(to right bottom, rgba(252, 84, 38, 0.5), rgba(252, 84, 38, 0.8)), url(" + bg + ")"}}>
                     <div className="container">
                         <div className="row">
@@ -43,7 +98,7 @@ class Trip extends React.Component{
 
                         <div className='form-wrapper'>
                             <div className="container">
-                                <Form/>
+                                <Form searchResultHandle={this.searchResultHandler}/>
                             </div>
                         </div>
 
@@ -56,49 +111,20 @@ class Trip extends React.Component{
                             <div className='col-xl-12'>
                                 <div style={{marginBottom: '35px', marginTop:' 0', textAlign:"center"}}>
                                     <h3>Search Results</h3>
-                                </div>
-
-                                <div className='task-listing-container'>
-                                    <div className='task-listing'>
-                                        <div className='task-listing-details'>
-                                            <div className='task-listing-description'>
-                                                <div className='task-tag' style={{marginTop: '15px'}}>
-                                                    <span> From </span>
-                                                </div>
-                                                <h3 className='task-listing-title'>Abuja-JabiPark (T40)</h3>
-                                                <ul className='task-icon'>
-                                                    <li>9:00am</li>
-                                                    <li>Monday, April 27th 2020</li>
-                                                </ul>
-                                            </div>
-
-                                            <div className='task-listing-description'>
-                                                <div className='task-tag' style={{marginTop: '15px'}}>
-                                                    <span> To </span>
-                                                </div>
-                                                <h3 className='task-listing-title'>Akure (T40)</h3>
-                                                <ul className='task-icon'>
-                                                    <li>4:09am</li>
-                                                    <li>Monday, April 27th 2020</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div className='task-listing-bid'>
-                                            <div className='task-listing-bid-inner'>
-                                                <div className='task-offer'>
-                                                    <strong>₦3,999 per passenger</strong>
-                                                </div>
-                                                <span className='button'>Book Now</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
+                                </div>   
+                                {this.state.loading ? (<p
+                                                        style={{marginBottom: '35px', 
+                                                        marginTop:' 0', 
+																												textAlign:"center",
+																												fontSize:'16px',
+																												color:'#666'}}>
+                                                            No available rides
+                                                    </p>) : this.UI()}  
                             </div>
                         </div>
                     </div>
                 </section>
-            </React.Fragment>
+          	</React.Fragment>
         
         )
 

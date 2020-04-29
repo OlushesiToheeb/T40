@@ -32,7 +32,8 @@ class Form extends React.Component{
     handleSubmit=(event) =>{
         event.preventDefault();
         const { cityFro, cityTo, startDate, passengers } = this.state;
-        alert(`you selected: ${cityFro} ${cityTo} ${startDate} ${passengers}`);
+        alert(`you selected: ${cityFro} ${cityTo} ${startDate} ${passengers}`)
+        this.props.searchResultHandle(this.state)
     }
 
     render(){
@@ -81,7 +82,7 @@ class Form extends React.Component{
                     <p className = 'mb-0'> Destination</p>
                     <div className='form-group'>
                         <select 
-                            // name='select' 
+                            
                             className='form-control' 
                             style={{
                                 boxShadow: 'rgba(0, 0, 0, 0.2) 0px 0px 3px 0px', 
@@ -134,7 +135,7 @@ class Form extends React.Component{
                     <p className = 'mb-0'> Passengers</p>
                     <div className='form-group'>
                         <select 
-                            // name='select' 
+                            
                             className='form-control' 
                             style={{
                                 boxShadow: 'rgba(0, 0, 0, 0.2) 0px 0px 3px 0px', 
@@ -182,8 +183,7 @@ class Form extends React.Component{
                                     width: '150px', 
                                     height: '48px',
                                 }}
-                                // onClick={this.searchResultHandler}
-                                
+                                 
                                 >
                                     Search
                             </button>
