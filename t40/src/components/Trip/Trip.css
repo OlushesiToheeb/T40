@@ -176,3 +176,14 @@ span.button{
     box-shadow: 0 4px 12px rgba(42,65,232,.15);
 }
 
+
+.mobile-height{
+  height: 400px;
+  padding-top: 1%;
+}
+
+.mobile-pic{
+  margin-top: 25px;
+  height: 360px;
+  width: 70%;
+}

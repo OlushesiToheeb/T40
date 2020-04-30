@@ -5,6 +5,9 @@ import bg from '../../assets/imgs/hero.jpg';
 import axios from 'axios';
 import Form from '../Form/Form';
 
+import mobilePic from '../../assets/imgs/mobile.png';
+import googlePlay from '../../assets/imgs/googlePlay.png';
+
 
 
 class Trip extends React.Component{
@@ -136,6 +139,46 @@ class Trip extends React.Component{
                         </div>
                     </div>
                 </section>
+
+								<section className="mobile-height" style={{backgroundColor: 'rgb(254, 61, 0)'}}>
+									<div className="container-fluid">
+										<div className="row" style={{}}>
+											<div className="col-xl-2"></div>
+											<div className="col-xl-3 col-sm-12">
+												<img src={mobilePic} alt="mobile phone" className="mobile-pic"/>
+											</div>
+											<div className="col-xl-4 col-sm-12">
+												<p className="mobile-text"style={{
+													fontSize: '35px', 
+													color: 'white', 
+													lineHeight: '25px', 
+													fontWeight: 'bolder', 
+													paddingTop: '15%'
+												}}>
+													Search. Compare. Book. 
+												</p>
+												<p className="mobile-text"style={{
+													fontSize: '35px', 
+													color: 'white', 
+													lineHeight: '25px', 
+													fontWeight: 'bolder', 
+												}}>
+													On Our Mobile App 
+												</p>
+												<p className="mobile-text mobile-margin"style={{
+													fontSize: '25px', 
+													color: 'white ',
+													marginTop: '3% ',
+													lineHeight: '35px',
+													paddingTop: '3%' 
+												}}>
+													Access our booking features straight from your mobile
+												</p>
+												<img src={googlePlay} alt="google play icon" className="adjust-play" style={{width: '30%', height: '10%'}} />
+											</div>
+										</div>
+									</div>
+								</section>
           	</React.Fragment>
         
         )
