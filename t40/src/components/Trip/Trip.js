@@ -11,7 +11,8 @@ class Trip extends React.Component{
    
     state={
         searchResult:null,
-        loading:true
+				loading:true,
+				inputValues: null
     }
 
     searchResultHandler = () =>{
@@ -25,6 +26,15 @@ class Trip extends React.Component{
             .catch(err => {
                 console.log(err.message)
             })
+		}
+
+		childToParentHandler = (data) =>{
+			Object.entries(data).forEach(([key, value])=>{
+				console.log(key, value)
+				return {key :value }
+			})
+
+			console.log(data)
 		}
 		
 		 UI = () =>{
@@ -53,7 +63,7 @@ class Trip extends React.Component{
 														<h3 className='task-listing-title'>Akure (T40)</h3>
 														<ul className='task-icon'>
 																<li>{this.state.searchResult[result].to.time}</li>
-																<li></li>
+																<li> {this.state.startDate} </li>
 														</ul>
 												</div>
 										</div>
@@ -98,7 +108,9 @@ class Trip extends React.Component{
 
                         <div className='form-wrapper'>
                             <div className="container">
-                                <Form searchResultHandle={this.searchResultHandler}/>
+																<Form 
+																	searchResultHandle={this.searchResultHandler}
+																	callFromParent={this.childToParentHandler}/>
                             </div>
                         </div>
 

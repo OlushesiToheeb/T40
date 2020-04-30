@@ -27,13 +27,16 @@ class Form extends React.Component{
           startDate: date
         });
     };
+
+
     
 
     handleSubmit=(event) =>{
         event.preventDefault();
         const { cityFro, cityTo, startDate, passengers } = this.state;
         alert(`you selected: ${cityFro} ${cityTo} ${startDate} ${passengers}`)
-        this.props.searchResultHandle(this.state)
+        this.props.callFromParent(this.state)
+        this.props.searchResultHandle()
     }
 
     render(){

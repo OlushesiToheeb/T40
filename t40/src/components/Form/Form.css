@@ -24,10 +24,13 @@ input, input[type=text] {
 }
 
 .box{
-    justify-content: center;
+    -webkit-box-pack: center;
+            justify-content: center;
     min-width: 175px;
-    flex-grow: 1;
-    align-items: center;
+    -webkit-box-flex: 1;
+            flex-grow: 1;
+    -webkit-box-align: center;
+            align-items: center;
 }
 
 .react-datepicker__day--keyboard-selected, .react-datepicker__day--selected  {
