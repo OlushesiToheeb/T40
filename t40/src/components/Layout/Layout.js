@@ -1,5 +1,6 @@
 import React from 'react';
 import Toolbar from '../Navigation/Toolbar/Toolbar'
+import Footer from '../UI/Footer/Footer';
 
 
 class Layout extends React.Component{
@@ -8,6 +9,7 @@ class Layout extends React.Component{
             <React.Fragment>
                 <Toolbar />
                 <main>{this.props.children}</main>
+                <Footer/>
             </React.Fragment>
         )    
     }

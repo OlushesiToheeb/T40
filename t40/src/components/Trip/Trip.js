@@ -7,6 +7,7 @@ import Form from '../Form/Form';
 import bg from '../../assets/imgs/hero.jpg';
 import './Trip.css';
 
+
 class Trip extends React.Component {
 	state = {
 		searchResult: null,
@@ -165,6 +166,7 @@ class Trip extends React.Component {
 							</div>
 						</div>
 					</section>
+					
 			</React.Fragment>
         
     )
