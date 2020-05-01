@@ -1,0 +1,50 @@
+.Hero{
+  background-size: cover;
+  min-height: 55vh;
+  padding: 1.5rem 1rem;
+}
+
+.form-wrappers{
+  max-width: 670px;
+  background: rgb(238, 238, 238);
+  padding: 0.2rem 0px;
+  border-radius: 4px;
+  margin: 3rem auto;
+}
+
+.track-input{
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 3px 0px;
+  padding-top: 0px;
+  padding-left: 4px;
+  margin: 0px 10px 0px 0px;
+  height: 48px;
+  border: 0px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 175px;
+}
+
+.button-cover{
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1.0rem;
+}
+
+.button-track{
+  background: rgb(252, 84, 38);
+  border: rgb(252, 84, 38);
+  color: rgb(255, 255, 255);
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  width: 150px;
+  height: 48px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.button-track:hover{
+  color: white!important;
+}

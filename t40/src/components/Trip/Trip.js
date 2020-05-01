@@ -29,16 +29,16 @@ class Trip extends React.Component {
 
 	childToParentHandler = (data) => {
 		this.setState({inputValues: data})
+		
 	}
 
 	UI = () => {
-
 		return Object.keys(this.state.searchResult).map(result => {
 			
+			// this.setState({[this.state.searchResult[result].fro.city] : inputValues.cityFro})
 			
-			
-
 			const { inputValues } = this.state
+
 			return (
 				
 				<div className='task-listing-container'>
