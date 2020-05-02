@@ -35,7 +35,14 @@ class Form extends React.Component {
   }
 
   render() {
-    // const { cityFro, cityTo, startDate, passengers } = this.state
+    const { cityFro, cityTo, startDate, passengers } = this.state;
+
+    const enabled =
+          cityFro.length > 0 &&
+          cityTo.length > 0 &&
+          startDate > 0 &&
+          passengers > 0;
+
     return (
       <form className='row' onSubmit={this.handleSubmit}>
         <div className='mt-lg-3 mr-lg-4 mt-2 col-lg-2'>
@@ -57,7 +64,7 @@ class Form extends React.Component {
                 minWidth: '175px'
               }}
               onChange={this.handleChange}
-              value={this.state.cityFro}
+              value={cityFro}
               name="cityFro">
 
               <option>Select...</option>
@@ -93,7 +100,7 @@ class Form extends React.Component {
                 minWidth: '175px'
               }}
               onChange={this.handleChange}
-              value={this.state.cityTo}
+              value={cityTo}
               name="cityTo">
               <option>Select...</option>
               <option value='Abuja'>Abuja</option>
@@ -113,13 +120,13 @@ class Form extends React.Component {
         <div className='mt-lg-3 mr-lg-4 mt-2 col-lg-2'>
           <p className='mb-0'> Date</p>
           <DatePicker
-            selected={this.state.startDate}
+            selected={startDate}
             onChange={this.handleDateChanged}
             placeholderText="Departure Date"
             className='box form-control'
             minDate={new Date()}
             showDisabledMonthNavigation
-            value={this.state.startDate}
+            value={startDate}
             name='startDate'
           />
         </div>
@@ -142,7 +149,7 @@ class Form extends React.Component {
                 minWidth: '175px'
               }}
               onChange={this.handleChange}
-              value={this.state.passengers}
+              value={passengers}
               name="passengers">
               <option>Select...</option>
               <option value='1'>1</option>
@@ -161,7 +168,8 @@ class Form extends React.Component {
           <div className='button-wrapper'>
             <div className='button'>
               <button
-                className='btn '
+                className='btn'
+                disabled={!enabled}
                 type='submit'
                 style={{
                   background: 'rgb(252, 84, 38)',
