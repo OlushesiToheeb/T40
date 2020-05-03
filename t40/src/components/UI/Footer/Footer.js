@@ -121,7 +121,7 @@ const footer = () =>{
         <div className="container">
           <div className="row">
             <div className="col-xl-12">
-            © 2020 <strong>T4o</strong> . All Rights Reserved.
+            © 2020 <strong>T40</strong> . All Rights Reserved.
             </div>
           </div>
         </div>
