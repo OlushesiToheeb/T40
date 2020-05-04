@@ -1,0 +1,15 @@
+.gradient{
+  background: linear-gradient(to bottom,rgba(0,0,0,0.03) 0%,rgba(255,255,255,0));
+  padding-bottom: 0;
+  position: relative;
+  padding: 70px 0;
+  margin-bottom: 0px;
+}
+
+.pagination-wrapper{
+  text-align: center;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 40px;
+  justify-content: space-around;
+}

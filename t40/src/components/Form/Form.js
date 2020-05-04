@@ -37,7 +37,7 @@ class Form extends React.Component {
   render() {
     const { cityFro, cityTo, startDate, passengers } = this.state;
 
-    const enabled =
+    const able =
           cityFro.length > 0 &&
           cityTo.length > 0 &&
           startDate > 0 &&
@@ -169,7 +169,7 @@ class Form extends React.Component {
             <div className='button'>
               <button
                 className='btn'
-                disabled={!enabled}
+                disabled={!able}
                 type='submit'
                 style={{
                   background: 'rgb(252, 84, 38)',
