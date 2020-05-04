@@ -13,7 +13,10 @@ class Trip extends React.Component {
 		searchResult: null,
 		loading: true,
 		inputValues: null,
+		
 	}
+
+	
 
 	searchResultHandler = () => {
 		axios.get('https://react-t40-ced15.firebaseio.com/bookRide.json')
@@ -31,6 +34,7 @@ class Trip extends React.Component {
 		this.setState({inputValues: data})
 		
 	}
+
 
 	UI = () => {
 		return Object.keys(this.state.searchResult).map(result => {
@@ -80,6 +84,8 @@ class Trip extends React.Component {
 	}
 
 	render() {
+
+
 
 		return (
 			<React.Fragment>
