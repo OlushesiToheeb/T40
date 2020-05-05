@@ -13,7 +13,7 @@ class Trip extends React.Component {
 		searchResult: null,
 		loading: true,
 		inputValues: null,
-		
+		loadButton: true
 	}
 
 	
@@ -22,7 +22,7 @@ class Trip extends React.Component {
 		axios.get('https://react-t40-ced15.firebaseio.com/bookRide.json')
 			.then(res => {
 				console.log(res, res.data)
-				this.setState({ searchResult: res.data, loading: false })
+				this.setState({ searchResult: res.data, loading: false, loadButton :false})
 				console.log(this.state.searchResult)
 			})
 			.catch(err => {
@@ -52,7 +52,7 @@ class Trip extends React.Component {
 								<div className='task-tag' style={{ marginTop: '15px' }}>
 									<span> From </span>
 								</div>
-								<h3 className='task-listing-title'>{this.state.searchResult[result].fro.city = this.state.inputValues.cityFro}(T40)</h3>
+								<h3 className='task-listing-title'>{ this.state.inputValues.cityFro}(T40)</h3>
 								<ul className='task-icon'>
 									<li>{this.state.searchResult[result].fro.time}</li>
 									<li>{inputValues.startDate.toDateString()}</li>
@@ -62,7 +62,7 @@ class Trip extends React.Component {
 								<div className='task-tag' style={{ marginTop: '15px' }}>
 									<span> To </span>
 								</div>
-								<h3 className='task-listing-title'>{ this.state.searchResult[result].to.city = this.state.inputValues.cityTo }(T40)</h3>
+								<h3 className='task-listing-title'>{  this.state.inputValues.cityTo }(T40)</h3>
 								<ul className='task-icon'>
 									<li>{this.state.searchResult[result].to.time}</li>
 									<li> {inputValues.startDate.toDateString()}</li>
@@ -105,7 +105,8 @@ class Trip extends React.Component {
 							<div className="container">
 								<Form
 									searchResultHandle={this.searchResultHandler}
-									callFromParent={this.childToParentHandler} />
+									callFromParent={this.childToParentHandler} 
+									button={this.state.loadButton}/>
 							</div>
 						</div>
 

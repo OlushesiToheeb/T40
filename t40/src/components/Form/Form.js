@@ -29,9 +29,10 @@ class Form extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { cityFro, cityTo, startDate, passengers } = this.state;
-    alert(`you selected: ${cityFro} ${cityTo} ${startDate} ${passengers}`)
+    console.log(`you selected: ${cityFro} ${cityTo} ${startDate} ${passengers}`)
     this.props.callFromParent(this.state)
     this.props.searchResultHandle()
+    this.setState({ cityFro : '' , cityTo : '', startDate : '' , passengers : ''})
   }
 
   render() {
@@ -164,28 +165,52 @@ class Form extends React.Component {
             </select>
           </div>
         </div>
+        {this.props.button ?
         <div className='mt-4 mb-md-2 col-lg-3'>
-          <div className='button-wrapper'>
-            <div className='button'>
-              <button
-                className='btn'
-                disabled={!able}
-                type='submit'
-                style={{
-                  background: 'rgb(252, 84, 38)',
-                  border: 'rgb(252, 84, 38)',
-                  color: 'rgb(255, 255, 255)',
-                  padding: '0.7rem 1.5rem',
-                  fontSize: '1.1rem',
-                  width: '150px',
-                  height: '48px',
-                }}
-              >
-                Search
-              </button>
-            </div>
+        <div className='button-wrapper'>
+          <div className='button'>
+            <button
+              className='btn'
+              disabled={!able}
+              type='submit'
+              style={{
+                background: 'rgb(252, 84, 38)',
+                border: 'rgb(252, 84, 38)',
+                color: 'rgb(255, 255, 255)',
+                padding: '0.7rem 1.5rem',
+                fontSize: '1.1rem',
+                width: '150px',
+                height: '48px',
+              }}
+            >
+              Search
+            </button>
           </div>
         </div>
+      </div> : 
+      <div className='mt-4 mb-md-2 col-lg-3'>
+      <div className='button-wrapper'>
+        <div className='button'>
+          <button
+            className='btn'
+            
+            type='submit'
+            style={{
+              background: 'rgb(252, 84, 38)',
+              border: 'rgb(252, 84, 38)',
+              color: 'rgb(255, 255, 255)',
+              padding: '0.7rem 1.5rem',
+              fontSize: '1.1rem',
+              width: '150px',
+              height: '48px',
+            }}
+          >
+            Searching...
+          </button>
+        </div>
+      </div>
+    </div>}
+        
       </form>
     )
   }
