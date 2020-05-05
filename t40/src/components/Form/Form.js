@@ -69,30 +69,30 @@ class Form extends React.Component {
       </div>
     )
 
-    if(this.props.button){
-      buttons = <div className='mt-4 mb-md-2 col-lg-3'>
-                <div className='button-wrapper'>
-                  <div className='button'>
-                    <button
-                      className='btn'
+    // if(this.props.button && !this.handleSubmit){
+    //   buttons = <div className='mt-4 mb-md-2 col-lg-3'>
+    //             <div className='button-wrapper'>
+    //               <div className='button'>
+    //                 <button
+    //                   className='btn'
                       
-                      type='submit'
-                      style={{
-                        background: 'rgb(252, 84, 38)',
-                        border: 'rgb(252, 84, 38)',
-                        color: 'rgb(255, 255, 255)',
-                        padding: '0.7rem 1.5rem',
-                        fontSize: '1.1rem',
-                        width: '150px',
-                        height: '48px',
-                      }}
-                    >
-                      Searching...
-                    </button>
-                  </div>
-                </div>
-              </div>
-    }
+    //                   type='submit'
+    //                   style={{
+    //                     background: 'rgb(252, 84, 38)',
+    //                     border: 'rgb(252, 84, 38)',
+    //                     color: 'rgb(255, 255, 255)',
+    //                     padding: '0.7rem 1.5rem',
+    //                     fontSize: '1.1rem',
+    //                     width: '150px',
+    //                     height: '48px',
+    //                   }}
+    //                 >
+    //                   Searching...
+    //                 </button>
+    //               </div>
+    //             </div>
+    //           </div>
+    // }
 
     return (
       <form className='row' onSubmit={this.handleSubmit}>
