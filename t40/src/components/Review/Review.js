@@ -23,7 +23,8 @@ class Review extends React.Component{
     to:'',
     operatorName:'',
     review:'',
-    reviewData:[]
+    reviewData:[],
+    loadingReview: true
   }
 
   componentDidMount () {
@@ -41,18 +42,18 @@ class Review extends React.Component{
             
             console.log(fetchReviews)
         }
-        this.setState({ reviewData:fetchReviews})
+        this.setState({ reviewData:fetchReviews, loadingReview:false})
       })
       .catch(err => err.message)
   }
 
   ratingChanged = (newRating) => {
-    alert(newRating)
+    
     this.setState({ratingValue : newRating})
   }
 
   handleDateChanged = (date) => {
-    alert(date)
+    
     this.setState({
       beginDate: date
     });
@@ -87,9 +88,9 @@ class Review extends React.Component{
       operatorName,
       review 
     } = this.state
-    alert('form submitted')
     this.submitReviewHandler(this.state)
-    
+    this.setState({ ratingValue : '', beginDate:'', email:'', phoneNumber : '',
+      customerName:'', from:'', to: '', operatorName:'', review : ''})
   }
 
 
@@ -118,10 +119,21 @@ class Review extends React.Component{
           operatorName.length > 0 &&
           review.length > 0;
 
+    let reviews =  <ReviewInput reviewsData={this.state.reviewData}/>
+        
+    if(this.state.loadingReview ){
+
+      reviews = <div class='d-flex justify-content-center' style={{ marginTop: "5rem"}}>
+                  <div class="spinner-grow m-20" role="status" style={{ color: "#FE3D00"}}>
+                    <span class="sr-only">Loading...</span>
+                  </div> 
+                </div>
+
+    }
     return(
       <section>
         <div> 
-        <ReviewInput reviewsData={this.state.reviewData}/>
+          {reviews}
         </div>
         <div className="container">
           <div className="row">
@@ -272,7 +284,7 @@ class Review extends React.Component{
                   </div>
                   <button 
                     type="submit" 
-                    disabled= {enabled} 
+                    // disabled= {!enabled} 
                     className="btn text-white mb-5 btn" 
                     style={{background: "rgb(252, 84, 38)"}}>Submit</button>
                 </form>

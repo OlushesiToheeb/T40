@@ -44,6 +44,56 @@ class Form extends React.Component {
           startDate > 0 &&
           passengers > 0;
 
+    let buttons = (
+      <div className='mt-4 mb-md-2 col-lg-3'>
+        <div className='button-wrapper'>
+          <div className='button'>
+            <button
+              className='btn'
+              disabled={!able}
+              type='submit'
+              style={{
+                background: 'rgb(252, 84, 38)',
+                border: 'rgb(252, 84, 38)',
+                color: 'rgb(255, 255, 255)',
+                padding: '0.7rem 1.5rem',
+                fontSize: '1.1rem',
+                width: '150px',
+                height: '48px',
+              }}
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+
+    if(this.props.button){
+      buttons = <div className='mt-4 mb-md-2 col-lg-3'>
+                <div className='button-wrapper'>
+                  <div className='button'>
+                    <button
+                      className='btn'
+                      
+                      type='submit'
+                      style={{
+                        background: 'rgb(252, 84, 38)',
+                        border: 'rgb(252, 84, 38)',
+                        color: 'rgb(255, 255, 255)',
+                        padding: '0.7rem 1.5rem',
+                        fontSize: '1.1rem',
+                        width: '150px',
+                        height: '48px',
+                      }}
+                    >
+                      Searching...
+                    </button>
+                  </div>
+                </div>
+              </div>
+    }
+
     return (
       <form className='row' onSubmit={this.handleSubmit}>
         <div className='mt-lg-3 mr-lg-4 mt-2 col-lg-2'>
@@ -165,52 +215,8 @@ class Form extends React.Component {
             </select>
           </div>
         </div>
-        {this.props.button ?
-        <div className='mt-4 mb-md-2 col-lg-3'>
-        <div className='button-wrapper'>
-          <div className='button'>
-            <button
-              className='btn'
-              disabled={!able}
-              type='submit'
-              style={{
-                background: 'rgb(252, 84, 38)',
-                border: 'rgb(252, 84, 38)',
-                color: 'rgb(255, 255, 255)',
-                padding: '0.7rem 1.5rem',
-                fontSize: '1.1rem',
-                width: '150px',
-                height: '48px',
-              }}
-            >
-              Search
-            </button>
-          </div>
-        </div>
-      </div> : 
-      <div className='mt-4 mb-md-2 col-lg-3'>
-      <div className='button-wrapper'>
-        <div className='button'>
-          <button
-            className='btn'
-            
-            type='submit'
-            style={{
-              background: 'rgb(252, 84, 38)',
-              border: 'rgb(252, 84, 38)',
-              color: 'rgb(255, 255, 255)',
-              padding: '0.7rem 1.5rem',
-              fontSize: '1.1rem',
-              width: '150px',
-              height: '48px',
-            }}
-          >
-            Searching...
-          </button>
-        </div>
-      </div>
-    </div>}
         
+        {buttons}
       </form>
     )
   }
