@@ -2,6 +2,7 @@ import React from 'react';
 import './Toolbar.css';
 import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems'
+import ToggleButton from './ToggleButton/ToggleButton'
 
 const Toolbar = () => {
     return(
@@ -10,6 +11,7 @@ const Toolbar = () => {
             <nav className="DesktopOnly">
                 <NavigationItems/>
             </nav>
+            <ToggleButton />
         </header>
     )
 }
