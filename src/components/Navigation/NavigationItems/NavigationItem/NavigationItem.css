@@ -9,8 +9,7 @@
 .NavigationItem a{
     text-decoration: none;
     width: 100%;
-    padding: 16px 10px;
-    border-bottom: 4px solid transparent;
+    color: #191414;
     box-sizing: border-box;
     display: block;
 }
