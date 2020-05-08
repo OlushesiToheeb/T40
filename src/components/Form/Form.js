@@ -49,7 +49,7 @@ class Form extends React.Component {
         <div className='button-wrapper'>
           <div className='button'>
             <button
-              className='btn'
+              className='btn width-100'
               disabled={!able}
               type='submit'
               style={{

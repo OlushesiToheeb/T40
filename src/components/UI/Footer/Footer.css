@@ -119,3 +119,23 @@ svg:not(:root) {
   font-weight: 500;
 }
 
+@media(max-width: 499px){
+  
+  .footer-top-section {
+      padding-bottom: 11%;
+  }
+
+  .padding-top{
+      padding-top: 5%;
+  }
+
+  .padding-top > button{
+    margin-top: 5% !important;
+    margin-left: 0%!important;
+  }
+
+  .footer-links{
+    margin-bottom: 5%;
+  }
+}
+

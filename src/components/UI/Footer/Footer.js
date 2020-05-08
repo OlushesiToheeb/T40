@@ -23,7 +23,7 @@ const footer = () =>{
           <div className="row">
             <div className="col-xl-4"></div>
             <div className="col-xl-5 col-sm-12">
-              <p style={{fontSize:"25px"}}>
+              <p style={{fontSize:"25px"}} className='padding-top'>
                 Subscribe to our Newsletter 
                 <button 
                 className="btn btn-warning text-white mb-5 ml-2" 

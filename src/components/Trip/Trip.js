@@ -138,11 +138,11 @@ class Trip extends React.Component {
 						<div className="container-fluid">
 							<div className="row" style={{}}>
 								<div className="col-xl-2"></div>
-								<div className="col-xl-3 col-sm-12">
+								<div className="col-xl-3 col-sm-12 display-none">
 									<img src={mobilePic} alt="mobile phone" className="mobile-pic"/>
 								</div>
 								<div className="col-xl-4 col-sm-12">
-									<p className="mobile-text"style={{
+									<p className="mobile-text font-size-2em"style={{
 										fontSize: '35px', 
 										color: 'white', 
 										lineHeight: '25px', 
@@ -151,7 +151,7 @@ class Trip extends React.Component {
 									}}>
 										Search. Compare. Book. 
 									</p>
-									<p className="mobile-text"style={{
+									<p className="mobile-text font-size-2em"style={{
 										fontSize: '35px', 
 										color: 'white', 
 										lineHeight: '25px', 
@@ -159,7 +159,7 @@ class Trip extends React.Component {
 									}}>
 										On Our Mobile App 
 									</p>
-									<p className="mobile-text mobile-margin"style={{
+									<p className="mobile-text mobile-margin font-size-1-5em"style={{
 										fontSize: '25px', 
 										color: 'white ',
 										marginTop: '3% ',
