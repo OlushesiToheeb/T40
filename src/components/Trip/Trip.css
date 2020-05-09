@@ -224,5 +224,18 @@ span.button{
         height: 14% !important; 
     }
 
-    
+    .task-listing{
+        flex-direction: column;
+    }
+
+    .task-listing-details {
+        padding-left: 30px !important;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .task-listing-bid {
+        flex: 0 0 0px;
+        width: 100%;
+    }
 }
