@@ -239,3 +239,41 @@ span.button{
         width: 100%;
     }
 }
+
+@media(min-width: 699px) and (max-width: 899px) {
+    .width-100{
+        width: 100%!important;
+    }
+
+    .mobile-banner{
+        position: absolute;
+        width: 60%;
+        padding: 40px;
+        margin-left: 31%;
+        margin-top: 5%;
+    }
+
+    .mobile-pic {
+        margin-top: 32px;
+        width: 29%;
+    }
+}
+
+@media(min-width: 900px) and (max-width: 1024px){
+    .min-height{
+        min-height: 30vh !important;
+    }
+
+    .mobile-banner{
+        position: absolute;
+        width: 60%;
+        padding: 40px;
+        margin-left: 31%;
+        margin-top: -3%;
+    }
+
+    .mobile-pic {
+        margin-top: 32px;
+        width: 29%;
+    }
+}

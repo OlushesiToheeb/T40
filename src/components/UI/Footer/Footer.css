@@ -139,3 +139,30 @@ svg:not(:root) {
   }
 }
 
+@media(min-width: 699px) and (max-width: 899px){
+  .footer-top-section {
+    padding-bottom: 6%;
+  }
+
+  .margin-top{
+    margin-top: 6% !important;
+  }
+  .padding-top {
+    text-align: center;
+  }
+}
+
+@media(min-width: 900px) and (max-width: 1024px){
+  .footer-top-section {
+    padding-bottom: 4%;
+  }
+
+  .margin-top{
+    margin-top: 4% !important;
+  }
+
+  .padding-top {
+    text-align: center;
+  }
+}
+
