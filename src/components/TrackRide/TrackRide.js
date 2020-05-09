@@ -14,7 +14,7 @@ class  TrackRide extends React.Component{
   render(){
       return(
         <div>
-          <section className="Hero" style={{ backgroundImage: " linear-gradient(to right bottom, rgba(252, 84, 38, 0.5), rgba(252, 84, 38, 0.8)), url(" + bg + ")" }}>
+          <section className="Hero min-height" style={{ backgroundImage: " linear-gradient(to right bottom, rgba(252, 84, 38, 0.5), rgba(252, 84, 38, 0.8)), url(" + bg + ")" }}>
             <div className="form-wrappers">
               <div className="container">
                 <form className="row">

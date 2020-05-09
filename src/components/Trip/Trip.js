@@ -89,7 +89,7 @@ class Trip extends React.Component {
 
 		return (
 			<React.Fragment>
-				<div className="Hero" style={{ backgroundImage: " linear-gradient(to right bottom, rgba(252, 84, 38, 0.5), rgba(252, 84, 38, 0.8)), url(" + bg + ")" }}>
+				<div className="Hero min-height" style={{ backgroundImage: " linear-gradient(to right bottom, rgba(252, 84, 38, 0.5), rgba(252, 84, 38, 0.8)), url(" + bg + ")" }}>
 					<div className="container">
 						<div className="row">
 							<div className="col-md-12">
@@ -141,7 +141,7 @@ class Trip extends React.Component {
 								<div className="col-xl-3 col-sm-12 display-none">
 									<img src={mobilePic} alt="mobile phone" className="mobile-pic"/>
 								</div>
-								<div className="col-xl-4 col-sm-12">
+								<div className="col-xl-4 col-sm-12 mobile-banner">
 									<p className="mobile-text font-size-2em"style={{
 										fontSize: '35px', 
 										color: 'white', 

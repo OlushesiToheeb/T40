@@ -26,7 +26,7 @@ const footer = () =>{
               <p style={{fontSize:"25px"}} className='padding-top'>
                 Subscribe to our Newsletter 
                 <button 
-                className="btn btn-warning text-white mb-5 ml-2" 
+                className="btn btn-warning text-white mb-5 ml-2 margin-top" 
                 style={{
                   backgroundColor: 'rgb(254, 61, 0)', 
                   marginTop: '8%', 
@@ -43,7 +43,7 @@ const footer = () =>{
       <div className="middle-section">
         <div className="container">
           <div className="row">
-            <div className="col-xl-4 col-lg-4 col-md-5">
+            <div className="col-xl-4 col-lg-4 col-md-4">
               <div className="footer-links">
                 <h3>T40</h3>
                 <ul>
@@ -68,7 +68,7 @@ const footer = () =>{
                 </ul>
               </div>
             </div>
-            <div className="col-xl-4 col-lg-4 col-md-5">
+            <div className="col-xl-4 col-lg-4 col-md-4">
             <div className="footer-links">
                 <h3>Travel</h3>
                 <ul>
@@ -93,7 +93,7 @@ const footer = () =>{
                 </ul>
               </div>
             </div>
-            <div className="col-xl-4 col-lg-4 col-md-5">
+            <div className="col-xl-4 col-lg-4 col-md-4">
               <div className="footer-links">
                 <h3>Connect With Us</h3>
                 <ul>
